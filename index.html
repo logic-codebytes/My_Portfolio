@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="/Portfolio/style.css">
+    
+</head>
+<body>
+    <header>
+      <img src="/Portfolio/namaste.png" alt="Profile Photo" class="profile-image">
+        <h1>Namaste Welcome to My Portfolio</h1>
+        <nav>
+            <a href="#about">About Me</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact Me</a>
+            <a href="#Feedback">Feedback</a>
+        </nav>
+    </header>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p id="typing-text" style="font-size: 2rem;"></p>
+        
+    </section>
+
+    <section id="skills">
+        <h2>Skills</h2>
+        <div class="skills">
+            <div>HTML</div>
+            <div>CSS</div>
+            <div>JavaScript</div>
+            <div>Java</div>
+            <div>C language</div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="projects">
+            <div><a href="/Portfolio/calculator.html"
+              style=" text-decoration:none">Project 1</a></div>
+            <div><a href="/Portfolio/RandomPass.html" 
+              style=" text-decoration:none">Project 2</a></div>
+            <div><a href="/Portfolio/stopWatch.html"
+             style=" text-decoration:none">Project 3</a></div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p>Email: bcalogicbytes@gmail.com</p>
+        <p>Phone: +91 6204959xxx</p>
+        <a href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile" style="color:white">LinkdIn Profile</a>
+    </section>
+
+    <section id="Feedback">
+        <h2>Feedback</h2>
+        <p>I'd love to hear your thoughts! Please fill out the form below:</p><br>
+        <form action="https://formspree.io/f/xblodnog" method="POST">
+         <label>Your email:</label>
+          <input type="email" name="email" placeholder="xyz@gmail.com"><br><br>
+
+        <label >Your Feedback:</label>
+    <textarea name="message" placeholder="Your Feedback Matters a Lot"></textarea>
+  
+  
+  <button type="submit">Send</button><br><br>
+  <button type="reset">Reset</button>
+</form>
+    </section>
+    
+    <!-- <img src="/Portfolio/namaste.png" alt="Namaste" style="position:relative;left:100px; width: 100px; height: 100px; border-radius: 50%;">
+    <h2 style="position: relative;  left:100px; font-size: 2.5rem;">Dhanyabad</h2> -->
+
+    <footer>
+        <p>&copy; 2025 My Portfolio</p>
+    </footer>
+
+    <script>
+        const text = "Hello! I am Akash Kumar, a passionate web developer with a love for creating beautiful and functional websites. I am currently pursuing a Bachelor of Computer Applications (BCA) at Bengal Institute of Technology. I completed my 10th and 12th grades under the ICSE board, securing 80.3% in Class 10 and 76.43% in Class 12 with a focus on science subjects."
+        + " I have a strong foundation in programming languages such as C, Java, and JavaScript, and I am proficient in HTML and CSS. My goal is to continuously learn and grow in the field of web development, and I am excited about the opportunities that lie ahead."
+        +"Beyond academics, I have a strong interest in problem-solving and enjoy tackling complex challenges through logical thinking. I also have leadership experience—serving as the team captain of my school's volleyball team, where I developed valuable teamwork and organizational skills."
+      
+        const typingElement = document.getElementById('typing-text');
+        const aboutLink = document.querySelector('nav a[href="#about"]');
+        let hasTyped = false; // Ensure it only types once
+      
+        function typeText() {
+          let index = 0;
+          function type() {
+            if (index < text.length) {
+              typingElement.innerHTML += text.charAt(index);
+              index++;
+              setTimeout(type, 40); // Typing speed
+            }
+          }
+          type();
+        }
+      
+        aboutLink.addEventListener('click', (e) => {
+          e.preventDefault(); 
+          document.getElementById('about').scrollIntoView({ behavior: 'smooth' });
+      
+          if (!hasTyped) {
+            setTimeout(() => {
+              typeText();
+              hasTyped = true;
+            }, 600); 
+          }
+        });
+      </script>
+      
+      
+</body>
+</html>
